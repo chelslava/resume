@@ -1,0 +1,106 @@
+import SkillBar from "./components/SkillBar";
+import ProjectCard from "./components/ProjectCard";
+
+export default function Resume() {
+  return (
+    <main className="p-6 text-white bg-gray-900 min-h-screen">
+      <header className="mb-12">
+        <h1 className="text-4xl font-bold text-green-400">Резюме</h1>
+        <p className="text-lg mt-2">DevOps / CI/CD инженер | Специалист по Jenkins</p>
+      </header>
+
+      {/* Контакты */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Контакты</h2>
+        <ul className="text-gray-300 space-y-1">
+          <li>Email: youremail@example.com</li>
+          <li>GitHub: <a href="https://github.com/yourname" className="text-blue-400 hover:underline">github.com/yourname</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" className="text-blue-400 hover:underline">linkedin.com/in/yourprofile</a></li>
+        </ul>
+      </section>
+
+      {/* Навыки */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Навыки и технологии</h2>
+        <div className="space-y-2">
+          <SkillBar name="Jenkins" level="90%" />
+          <SkillBar name="Groovy" level="80%" />
+          <SkillBar name="Git" level="85%" />
+          <SkillBar name="Docker" level="75%" />
+          <SkillBar name="Kubernetes" level="70%" />
+          <SkillBar name="Slack API" level="70%" />
+          <SkillBar name="Python" level="75%" />
+          <SkillBar name="Bash" level="80%" />
+        </div>
+      </section>
+
+      {/* Интеграции */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Интеграции Jenkins</h2>
+        <ul className="list-disc list-inside text-gray-300 space-y-1">
+          <li>GitHub / GitLab</li>
+          <li>Slack / Telegram / Email</li>
+          <li>Docker Registry / Kubernetes</li>
+          <li>SonarQube / Nexus</li>
+        </ul>
+      </section>
+
+      {/* Архитектура Jenkins */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Архитектура Jenkins</h2>
+        <p className="text-gray-300">
+          Использую master-agent архитектуру. Jenkins развернут в Kubernetes с автоподключением агентов через JNLP, пайплайны написаны на Groovy + Shared Libraries. Интеграция с Vault, Helm и Slack. Применяю подход IaC с использованием Helm Charts.
+        </p>
+      </section>
+
+      {/* Опыт работы */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Опыт работы</h2>
+        <div className="text-gray-300 space-y-4">
+          <div>
+            <h3 className="text-lg font-semibold text-green-400">DevOps-инженер — PIX Robotics</h3>
+            <p className="text-sm text-gray-400">2023 — настоящее время</p>
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li>Автоматизация CI/CD для RPA скриптов</li>
+              <li>Интеграция Jenkins с системами контроля версий, Telegram и Slack</li>
+              <li>Настройка пайплайнов с rollback и blue-green деплоем</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Сертификаты */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Сертификаты</h2>
+        <ul className="list-disc list-inside text-gray-300 space-y-1">
+          <li>Jenkins Engineer (Certified Jenkins Engineer - CJE)</li>
+          <li>Docker Certified Associate</li>
+          <li>Kubernetes for Developers</li>
+        </ul>
+      </section>
+
+      {/* Проекты */}
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold mb-4">Проекты</h2>
+        <ProjectCard
+          title="CI/CD пайплайн для RPA-решений"
+          description="Настроен Jenkins-пайплайн с триггерами на push, unit-тестами, сборкой артефактов и деплоем в dev/prod среду. Slack-уведомления, мониторинг и rollbacks."
+          tech={["Jenkins", "Groovy", "Python", "Slack API", "Git"]}
+        />
+        <ProjectCard
+          title="Инфраструктура Jenkins в облаке"
+          description="Развертывание Jenkins в облаке с помощью Docker и Kubernetes, подключение агентов, конфигурация shared libraries, RBAC и секретов."
+          tech={["Jenkins", "Docker", "Kubernetes", "Helm"]}
+        />
+      </section>
+
+      {/* Обо мне */}
+      <section>
+        <h2 className="text-2xl font-semibold mb-4">Обо мне</h2>
+        <p className="text-gray-300">
+          Профессионал с опытом настройки и поддержки Jenkins в роли основного CI/CD-инструмента. Умею строить надежные пайплайны, автоматизировать развертывание и интегрировать Jenkins с другими системами (Git, Slack, Docker, Kubernetes).
+        </p>
+      </section>
+    </main>
+  );
+}
